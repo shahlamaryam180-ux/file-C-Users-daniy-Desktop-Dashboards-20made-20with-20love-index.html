@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>STS Operational Efficiency Dashboard</title>
+    <script src="https://cdn.plot.ly/plotly-2.26.0.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        .header {
+            background: linear-gradient(90deg, #9C27B0 0%, #FF9800 100%);
+            padding: 40px;
+            border-radius: 12px;
+            color: white;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 38px;
+            font-weight: 700;
+        }
+        .header p {
+            margin: 15px 0 0 0;
+            font-size: 20px;
+            opacity: 0.95;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #e0e0e0;
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>⚡ Southern Travel Solutions</h1>
+            <p>Operational Efficiency Dashboard – October 2025</p>
+        </div>
+        
+        
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 30px 0;">
+        <div style="background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%); padding: 25px; border-radius: 12px; border-left: 6px solid #9C27B0; box-shadow: 0 6px 12px rgba(0,0,0,0.15);">
+            <h3 style="margin: 0; font-size: 15px; color: #1565C0;">🚖 Total Trips</h3>
+            <p style="margin: 0; font-size: 42px; font-weight: bold; color: #9C27B0;">897</p>
+        </div>
+        <div style="background: linear-gradient(135deg, #F3E5F5 0%, #E1BEE7 100%); padding: 25px; border-radius: 12px; border-left: 6px solid #9C27B0; box-shadow: 0 6px 12px rgba(0,0,0,0.15);">
+            <h3 style="margin: 0; font-size: 15px; color: #6A1B9A;">⏱️ Avg Trip Duration</h3>
+            <p style="margin: 0; font-size: 42px; font-weight: bold; color: #9C27B0;">24.0 min</p>
+        </div>
+        <div style="background: linear-gradient(135deg, #FFE5D9 0%, #FFD4C4 100%); padding: 25px; border-radius: 12px; border-left: 6px solid #FF9800; box-shadow: 0 6px 12px rgba(0,0,0,0.15);">
+            <h3 style="margin: 0; font-size: 15px; color: #8B4513;">⏳ Avg Wait Time</h3>
+            <p style="margin: 0; font-size: 42px; font-weight: bold; color: #FF9800;">7.5 min</p>
+        </div>
+        <div style="background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%); padding: 25px; border-radius: 12px; border-left: 6px solid #4CAF50; box-shadow: 0 6px 12px rgba(0,0,0,0.15);">
+            <h3 style="margin: 0; font-size: 15px; color: #2E7D32;">⚡ Efficiency Score</h3>
+            <p style="margin: 0; font-size: 42px; font-weight: bold; color: #4CAF50;">68.8%</p>
+        </div>
+    </div>
+    
+        
+        <div id="dashboard"></div>
+        
+        <div class="footer">
+            <p><strong>Dashboard Generated:</strong> October 13, 2025 at 10:20 AM</p>
+            <p>Data Source: STS_Operational_Efficiency.xlsx | Southern Travel Solutions Analytics</p>
+        </div>
+    </div>
+    
+    <script>
+        var plotlyData = {"data":[{"marker":{"color":"#9C27B0"},"name":"Total Trips","showlegend":false,"text":{"dtype":"f8","bdata":"AAAAAADAb0AAAAAAAGBlQAAAAAAAgGZAAAAAAAAAY0AAAAAAAIBhQA=="},"textposition":"outside","x":["Central","East","North","South","West"],"y":{"dtype":"i2","bdata":"\u002fgCrALQAmACMAA=="},"type":"bar","xaxis":"x","yaxis":"y"},{"line":{"color":"#9C27B0","width":3},"mode":"lines+markers","name":"Trip Duration","showlegend":false,"x":["2025-10-01T00:00:00.000000000","2025-10-02T00:00:00.000000000","2025-10-03T00:00:00.000000000","2025-10-04T00:00:00.000000000","2025-10-05T00:00:00.000000000","2025-10-06T00:00:00.000000000","2025-10-07T00:00:00.000000000","2025-10-08T00:00:00.000000000","2025-10-09T00:00:00.000000000","2025-10-10T00:00:00.000000000"],"y":{"dtype":"f8","bdata":"H4XrUbgeLkAAAAAAAIA7QIXrUbgehTtAMzMzMzNzMkAUrkfhenRAQHE9CtejcDVAexSuR+F6NUAUrkfhelQzQB+F61G43jVAPQrXo3A9QUA="},"type":"scatter","xaxis":"x2","yaxis":"y2"},{"marker":{"color":"#FF9800","size":{"dtype":"f8","bdata":"ZmZmZmZmMUAzMzMzMzMvQGZmZmZmZjpAmpmZmZmZLUBmZmZmZmY4QJqZmZmZmTRAMzMzMzMzK0CamZmZmZkvQGZmZmZmZihAmpmZmZmZMkA="}},"mode":"markers","showlegend":false,"text":["North","South","Central","South","Central","East","East","West","West","North"],"x":{"dtype":"f8","bdata":"KVyPwvUoIkB7FK5H4XojQB+F61G4niNA4XoUrkfhGUBmZmZmZmYeQEjhehSuRxlAPQrXo3A9FEBmZmZmZmYcQGZmZmZmZhZA4XoUrkdhIEA="},"y":{"dtype":"f8","bdata":"H4XrUbgeLkAAAAAAAIA7QIXrUbgehTtAMzMzMzNzMkAUrkfhenRAQHE9CtejcDVAexSuR+F6NUAUrkfhelQzQB+F61G43jVAPQrXo3A9QUA="},"type":"scatter","xaxis":"x3","yaxis":"y3"},{"marker":{"color":{"dtype":"f8","bdata":"9MewySXMUUAM\u002f0NTE19SQDVvfPzpSFBAoGdU1z0uUECfQCo5L0tRQA=="}},"name":"Efficiency Score","showlegend":false,"text":["71.2%","73.5%","65.1%","64.7%","69.2%"],"textposition":"outside","x":["Central","East","North","South","West"],"y":{"dtype":"f8","bdata":"9MewySXMUUAM\u002f0NTE19SQDVvfPzpSFBAoGdU1z0uUECfQCo5L0tRQA=="},"type":"bar","xaxis":"x4","yaxis":"y4"}],"layout":{"template":{"data":{"barpolar":[{"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scattermap":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermap"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"white","showlakes":true,"showland":true,"subunitcolor":"#C8D4E3"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"paper_bgcolor":"white","plot_bgcolor":"white","polar":{"angularaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""},"bgcolor":"white","radialaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"yaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"zaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"baxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"bgcolor":"white","caxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2}}},"xaxis":{"anchor":"y","domain":[0.0,0.44]},"yaxis":{"anchor":"x","domain":[0.575,1.0]},"xaxis2":{"anchor":"y2","domain":[0.56,1.0]},"yaxis2":{"anchor":"x2","domain":[0.575,1.0]},"xaxis3":{"anchor":"y3","domain":[0.0,0.44]},"yaxis3":{"anchor":"x3","domain":[0.0,0.425]},"xaxis4":{"anchor":"y4","domain":[0.56,1.0]},"yaxis4":{"anchor":"x4","domain":[0.0,0.425]},"annotations":[{"font":{"size":16},"showarrow":false,"text":"Trips by Zone","x":0.22,"xanchor":"center","xref":"paper","y":1.0,"yanchor":"bottom","yref":"paper"},{"font":{"size":16},"showarrow":false,"text":"Average Trip Duration Over Time","x":0.78,"xanchor":"center","xref":"paper","y":1.0,"yanchor":"bottom","yref":"paper"},{"font":{"size":16},"showarrow":false,"text":"Wait Time vs Trip Duration","x":0.22,"xanchor":"center","xref":"paper","y":0.425,"yanchor":"bottom","yref":"paper"},{"font":{"size":16},"showarrow":false,"text":"Zone Efficiency Comparison","x":0.78,"xanchor":"center","xref":"paper","y":0.425,"yanchor":"bottom","yref":"paper"}],"title":{"font":{"size":28},"text":"\u003cb\u003eSouthern Travel Solutions\u003c\u002fb\u003e\u003cbr\u003eOperational Efficiency Dashboard","x":0.5,"xanchor":"center"},"height":900}};
+        Plotly.newPlot('dashboard', plotlyData.data, plotlyData.layout, {responsive: true});
+    </script>
+</body>
+</html>
